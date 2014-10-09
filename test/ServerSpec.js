@@ -11,7 +11,7 @@ var Link = require('../app/models/link');
 // NOTE: these tests are designed for mongo!
 /////////////////////////////////////////////////////
 
-xdescribe('', function() {
+describe('', function() {
 
   beforeEach(function(done) {
     // Log out currently signed in user
@@ -80,7 +80,7 @@ xdescribe('', function() {
             Link.findOne({'url' : 'http://www.roflzoo.com/'})
               .exec(function(err,link){
                 if(err) console.log(err);
-                expect(link.title).to.equal('Rofl Zoo - Daily funny animal pictures');
+                expect(link.title).to.equal('Funny animal pictures, funny animals, funniest dogs');
               });
           })
           .end(done);
@@ -210,7 +210,7 @@ xdescribe('', function() {
     beforeEach(function(done) {
       new User({
           'username': 'Phillip',
-          'password': 'Phillip'
+          'password': '$2a$10$1pkHLCn9xA9HScj5lWK4ZeUdNrTBiP4BZYK5y7qCJueGu7yOh5WNW'
       }).save(function(){
         done();
       });
