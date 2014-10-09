@@ -96,7 +96,7 @@ describe('', function() {
           title: 'Rofl Zoo - Daily funny animal pictures',
           base_url: 'http://127.0.0.1:4568',
           visits: 0
-        })
+        });
 
         link.save(function() {
           done();
@@ -198,7 +198,7 @@ describe('', function() {
           expect(res.headers.location).to.equal('/');
           request(app)
             .get('/logout')
-            .expect(200)
+            .expect(200);
         })
         .end(done);
     });
@@ -210,7 +210,7 @@ describe('', function() {
     beforeEach(function(done) {
       new User({
           'username': 'Phillip',
-          'password': '$2a$10$1pkHLCn9xA9HScj5lWK4ZeUdNrTBiP4BZYK5y7qCJueGu7yOh5WNW'
+          'password': 'Phillip'
       }).save(function(){
         done();
       });
@@ -239,7 +239,7 @@ describe('', function() {
         .expect(function(res) {
           expect(res.headers.location).to.equal('/login');
         })
-        .end(done)
+        .end(done);
       });
 
   }); // Account Login
